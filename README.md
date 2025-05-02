@@ -12,6 +12,11 @@ The **Sentiment Analyzer** is a web-based application that predicts the sentimen
 . ├── app.py # Main Flask application ├── requirements.txt # Python dependencies ├── train.py # Script to train the sentiment analysis model ├── test.py # Script to test the model ├── data/ │ └── reviews.csv # Dataset for training and testing ├── models/ │ └── sentiment_model.pkl # Pre-trained sentiment analysis model ├── templates/ │ └── index.html # HTML template for the web interface
 
 
+## 🔗 Live Demo
+
+👉 [Click here to try it live](https://sentiment-analyzer-tfs2.onrender.com)  
+(*Note: free Render apps may take a few seconds to start after inactivity*)
+
 ## Prerequisites
 
 - Python 3.8 or higher
