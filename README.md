@@ -1,83 +1,126 @@
-# Sentiment Analyzer
+# 🤖 Sentiment Analyzer (Transformers-Powered Web App)
 
-The **Sentiment Analyzer** is a web-based application that predicts the sentiment of a given text input. It uses machine learning models to classify the sentiment as positive, negative, or neutral. This project is built with Python, Flask, and Bootstrap for the frontend.
+This project is a web-based sentiment analysis application built with **Flask** and powered by a **pre-trained Hugging Face Transformer model**. It classifies user-submitted text as `POSITIVE` or `NEGATIVE` and shows a confidence score. The app is publicly deployed on Render and can handle modern language, slang, and expressive sentences.
 
-## Features
-
-- Input text or reviews to analyze sentiment.
-- Displays the sentiment prediction in a user-friendly interface.
-- Lightweight and easy to deploy.
-
-## Project Structure
-. ├── app.py # Main Flask application ├── requirements.txt # Python dependencies ├── train.py # Script to train the sentiment analysis model ├── test.py # Script to test the model ├── data/ │ └── reviews.csv # Dataset for training and testing ├── models/ │ └── sentiment_model.pkl # Pre-trained sentiment analysis model ├── templates/ │ └── index.html # HTML template for the web interface
-
+---
 
 ## 🔗 Live Demo
 
-👉 [Click here to try it live](https://sentiment-analyzer-tfs2.onrender.com)  
-(*Note: free Render apps may take a few seconds to start after inactivity*)
+👉 [Click here to try the app](https://sentiment-analyzer-tfs2.onrender.com)  
+(*Replace with your actual Render URL after deployment*)
 
-## Prerequisites
+---
 
-- Python 3.8 or higher
-- pip (Python package manager)
+## 🎯 Features
 
-## Installation
+- Uses `distilbert-base-uncased-finetuned-sst-2-english` from Hugging Face 🤗
+- Handles modern sentiment expressions and emojis
+- Shows confidence level for each prediction
+- JSON API endpoint (`/api/predict`) for integrations
+- Clean Bootstrap-styled frontend
+- Deployed on Render.com
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/guired513/sentiment-analyzer.git
-   cd sentiment-analyzer
+---
 
-2. Install dependencies:
+## 🚀 Tech Stack
 
-    pip install -r requirements.txt
+| Layer         | Tool / Library                          |
+|---------------|------------------------------------------|
+| Backend       | Python, Flask, Gunicorn                 |
+| AI Model      | Hugging Face Transformers, DistilBERT   |
+| Frontend      | HTML + Bootstrap (Jinja2 template)       |
+| Deployment    | Render (Free tier)                      |
 
-3. Ensure the dataset (data/reviews.csv) and pre-trained model (models/sentiment_model.pkl) are in their respective directories.
+---
 
-## Usage
-1. Start the Flask application:
-    python app.py
+## 💻 Local Setup Instructions
 
-2. Open your browser and navigate to http://127.0.0.1:5000.
-3. Enter text in the input box and click "Predict" to see the sentiment analysis result.
+### ✅ Prerequisites
 
-## Training the Model
+- Python 3.8+
+- pip
+- Git
+- Virtual environment (optional but recommended)
 
-To train the sentiment analysis model, use the train.py script:
-    python [train.py](http://_vscodecontentref_/6)
+### 📦 Installation
 
-Ensure the dataset (data/reviews.csv) is available before running the script.
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/sentiment-analyzer.git
+cd sentiment-analyzer
 
-## Testing the Model
+# Setup virtual environment (optional)
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
-To test the model's accuracy, use the test.py script:
-    python [test.py](http://_vscodecontentref_/7)
+# Install dependencies
+pip install -r requirements.txt
 
-## Technologies Used
+# Run the app locally
+python app.py
+```
 
-- Backend: Flask
-- Frontend: HTML, CSS (Bootstrap)
-- Machine Learning: Scikit-learn, NLTK
-- Data: Pandas, NumPy
+Visit: `http://127.0.0.1:5000`
 
-## Contributing
+---
 
-Contributions are welcome! Feel free to submit issues or pull requests to improve the project.
+## 🔁 JSON API Usage
 
-## License
+### 📮 Endpoint: `/api/predict`  
+**Method:** `POST`  
+**Content-Type:** `application/json`
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+### 🧪 Example Request
+```json
+{
+  "text": "This movie was absolutely amazing!"
+}
+```
 
-## Acknowledgments
+### ✅ Example Response
+```json
+{
+  "prediction": "POSITIVE",
+  "confidence": 0.998
+}
+```
 
-- Bootstrap for the frontend framework.
-- Scikit-learn for machine learning tools.
-- NLTK for natural language processing.
+---
 
-## 👤 Author
+## 📁 Folder Structure
+
+```
+sentiment-analyzer/
+├── app.py                 # Flask app with transformer model
+├── templates/
+│   └── index.html         # Frontend UI
+├── static/                # Optional CSS or JS files
+├── requirements.txt       # Python dependencies
+├── Procfile               # For deployment on Render
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.  
+Free to use, modify, and deploy with attribution.
+
+---
+
+## 🙏 Acknowledgments
+
+- [Hugging Face Transformers](https://huggingface.co/transformers/)
+- [DistilBERT SST-2 Model](https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
+- [Render](https://render.com/) for free cloud hosting
+- All open-source contributors and pre-trained model creators
+
+---
+
+## 👨‍💻 Author
 
 **Gui Red**  
-Researcher, and AI Enthusiast  
-📍 Bicol University, Philippines  
-🔗 [GitHub](https://github.com/guired513)
+Researcher· AI Enthusiast · Bicol University  
+🔗 [github.com/guired513](https://github.com/guired513)

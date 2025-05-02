@@ -1,24 +1,29 @@
 from flask import Flask, request, render_template, jsonify
-import joblib
+from transformers import pipeline
 
 app = Flask(__name__)
-model = joblib.load("models/sentiment_model.pkl")
+classifier = pipeline("sentiment-analysis")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     prediction = None
+    confidence = None
     if request.method == "POST":
         text = request.form["text"]
-        prediction = model.predict([text])[0]
-    return render_template("index.html", prediction=prediction)
+        result = classifier(text)[0]
+        prediction = result["label"]
+        confidence = round(result["score"] * 100, 2)
+    return render_template("index.html", prediction=prediction, confidence=confidence)
 
 @app.route("/api/predict", methods=["POST"])
 def api_predict():
     try:
         data = request.get_json()
-        text = data["text"]
-        prediction = model.predict([text])[0]
-        return jsonify({"prediction": prediction})
+        result = classifier(data["text"])[0]
+        return jsonify({
+            "prediction": result["label"],
+            "confidence": result["score"]
+        })
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
