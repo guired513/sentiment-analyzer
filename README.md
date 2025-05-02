@@ -70,9 +70,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - Scikit-learn for machine learning tools.
 - NLTK for natural language processing.
 
-👤 Author
+## 👤 Author
 
-Gui Red
-Researcher, and AI Enthusiast
-📍 Bicol University, Philippines
-🔗 GitHub
+**Gui Red**  
+Researcher, and AI Enthusiast  
+📍 Bicol University, Philippines  
+🔗 [GitHub](https://github.com/guired513)
