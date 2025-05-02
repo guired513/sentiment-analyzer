@@ -21,7 +21,7 @@ The **Sentiment Analyzer** is a web-based application that predicts the sentimen
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/sentiment-analyzer.git
+   git clone https://github.com/guired513/sentiment-analyzer.git
    cd sentiment-analyzer
 
 2. Install dependencies:
@@ -70,4 +70,9 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - Scikit-learn for machine learning tools.
 - NLTK for natural language processing.
 
-Happy coding! ```
+👤 Author
+
+Gui Red
+Researcher, and AI Enthusiast
+📍 Bicol University, Philippines
+🔗 GitHub
