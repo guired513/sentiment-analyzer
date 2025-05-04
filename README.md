@@ -7,7 +7,6 @@ This project is a web-based sentiment analysis application built with **Flask** 
 ## 🔗 Live Demo
 
 👉 [Click here to try the app](https://sentiment-analyzer-tfs2.onrender.com)  
-(*Replace with your actual Render URL after deployment*)
 
 ---
 
